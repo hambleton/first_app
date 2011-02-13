@@ -5,7 +5,12 @@ gem 'rails', '3.0.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby',  '1.3.2', :require => 'sqlite3'
+# Neil - Suggested fix to get Heroku deployment environment working - see 
+# http://getsatisfaction.com/railstutorial/topics/heroku_app_crashed_this_application_is_temporarily_offline
+# gem 'sqlite3-ruby',  '1.3.2', :require => 'sqlite3'
+group :development, :test do
+	gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
